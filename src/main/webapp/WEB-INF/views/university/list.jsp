@@ -20,8 +20,8 @@
         <tbody>
         <c:forEach var="university" items="${universities}">
             <tr>
-            	<td>${university.key}</td>
-                <td>${university.value}</td>
+            	<td>${university.id}</td>
+                <td>${university.universityName}</td>
             </tr>
         </c:forEach>
         </tbody>
