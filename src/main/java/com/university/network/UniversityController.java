@@ -6,10 +6,13 @@ import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.university.network.service.UniversityService;
 
 /**
  * Handles requests for the application home page.
@@ -19,6 +22,9 @@ public class UniversityController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(UniversityController.class);
 	
+	@Autowired
+	private UniversityService universityService ;
+
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -36,4 +42,10 @@ public class UniversityController {
 		return "index";
 	}
 	
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public String searchUniversities(Model model) {
+		logger.info("Search Universites ");
+		model.addAttribute("universities", universityService.findAll());
+		return "university/list";
+	}
 }
