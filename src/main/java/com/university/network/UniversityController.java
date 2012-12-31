@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,9 +44,10 @@ public class UniversityController {
 		return "index";
 	}
 	
-	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public String searchUniversities(Model model) {
+	@RequestMapping(value = "/search", method = RequestMethod.POST)
+	public String searchUniversities(Model model, HttpServletRequest request) {
 		logger.info("Search Universites ");
+		logger.info(" terms: " +request.getParameter("search"));
 		model.addAttribute("universities", universityService.findAll());
 		return "university/list";
 	}
