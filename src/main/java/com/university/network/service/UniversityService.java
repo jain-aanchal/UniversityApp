@@ -24,20 +24,4 @@ public class UniversityService {
 	
 	private Map<Integer,String> universityMap;
 	 
-//	public Map<Integer,String> findAll(){
-//		logger.info("Retriving all the universities ") ;
-//		if(universityMap == null){
-//			populate() ;
-//		}
-//		return universityMap ;
-//	}
-	
-//	 private void populate() {
-//		 universityMap = new HashMap<Integer,String>() ;
-//		 universityMap.put(1,"University of Texas");
-//		 universityMap.put(2,"Stanford University");
-//		 universityMap.put(3,"Michigan Univerisity");
-//		 universityMap.put(4,"University of San Francisco");
-//	    }
-	
 }
