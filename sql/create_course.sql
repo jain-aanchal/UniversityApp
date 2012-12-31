@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS  course ;
+
+CREATE TABLE IF NOT EXISTS `course` (
+`id` INT NOT NULL ,
+`name` VARCHAR( 128 )  COLLATE utf8_unicode_ci NOT NULL ,
+`level` VARCHAR( 64 ) NULL DEFAULT NULL ,
+`description` VARCHAR( 128 ) NULL DEFAULT NULL ,
+PRIMARY KEY ( `id` ) ,
+UNIQUE (`name`)
+) ENGINE = INNODB DEFAULT CHARSET=utf8 COMMENT = 'Course Data Table';
