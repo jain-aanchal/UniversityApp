@@ -8,7 +8,7 @@
 <body>
 <div class="container">
 <h1>Universities</h1>
-<c:if test="${not empty universities}">
+<c:if test="${not empty university}">
   
     <table class="normal-table">
         <thead>
@@ -18,12 +18,12 @@
             </tr>
         </thead>
         <tbody>
-        <c:forEach var="university" items="${universities}">
+        <!--c:forEach var="university" items="${university}"-->
             <tr>
             	<td>${university.id}</td>
                 <td>${university.universityName}</td>
             </tr>
-        </c:forEach>
+        <!--/c:forEach-->
         </tbody>
     </table>
 </c:if>

@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Column;
 @Entity
 @Table(name = "university")
-public class University 
+public class University implements TopId
 {
 	private static final long serialVersionUID = 1L;
     
@@ -45,10 +45,12 @@ public class University
 		return universityName;
 	}
 
+	@Override
 	public Integer getId() {
 		return id;
 	}
 
+	@Override
 	public void setId(Integer id) {
 		this.id = id;
 	}

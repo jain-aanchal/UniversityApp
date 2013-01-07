@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "course")
-public class Course {
+public class Course implements TopId{
 
 private static final long serialVersionUID = 1L;
     
@@ -27,10 +27,12 @@ private static final long serialVersionUID = 1L;
 	@Column(name = "description")
 	private String description ;
 
+	@Override
 	public Integer getId() {
 		return id;
 	}
-
+	
+	@Override
 	public void setId(Integer id) {
 		this.id = id;
 	}

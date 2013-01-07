@@ -48,7 +48,7 @@ public class UniversityController {
 	public String searchUniversities(Model model, HttpServletRequest request) {
 		logger.info("Search Universites ");
 		logger.info(" terms: " +request.getParameter("search"));
-		model.addAttribute("universities", universityService.findAll());
+		model.addAttribute("university", universityService.findUniversityByName(request.getParameter("search")));
 		return "university/list";
 	}
 }
